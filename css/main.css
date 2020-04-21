@@ -206,7 +206,6 @@ body {
           -o-transition: 0.2s;
           transition: 0.2s; }
   .page-team {
-    position: relative;
     height: auto;
     background: #316099;
     border-radius: 0 200px 0 0;
@@ -270,13 +269,15 @@ body {
               -ms-flex-direction: column;
                   flex-direction: column;
           padding-left: 0; } }
-    @media (max-width: 950px) {
-      .page-team .block-team {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column; } }
+    .page-team .block-team {
+      position: relative; }
+      @media (max-width: 950px) {
+        .page-team .block-team {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column; } }
 
 .block-services {
   margin-top: 185px;
@@ -469,6 +470,8 @@ body {
     line-height: 30px;
     color: #316099;
     margin-bottom: 48px; }
+  .form-wrap .form-item {
+    margin-bottom: 32px; }
   .form-wrap label {
     color: #316099;
     opacity: 0.8;
@@ -478,6 +481,7 @@ body {
   .form-wrap input {
     font-family: "gilroy-regular";
     letter-spacing: 0.04em;
+    display: block;
     font-size: 16px;
     width: 428px;
     height: 72px;
@@ -486,8 +490,20 @@ body {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     border-radius: 10px;
-    padding: 21px 0 21px 42px;
-    margin-bottom: 32px; }
+    padding: 21px 0 21px 42px; }
+  .form-wrap .form__error {
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    margin-top: 3px;
+    display: none; }
+  .form-wrap input:valid:not(:placeholder-shown) {
+    border-color: green; }
+  .form-wrap input:invalid:not(:placeholder-shown) {
+    border-color: red; }
+  .form-wrap input:invalid:not(:placeholder-shown) + .form__error {
+    display: block;
+    border-radius: 10px; }
   .form-wrap input[type=textarea] {
     padding-left: 42px;
     -webkit-box-sizing: border-box;
@@ -510,6 +526,19 @@ body {
     padding: 26px 0 26px 0;
     color: #fff;
     margin-top: 72px; }
+  .form-wrap .popup {
+    display: none;
+    font-size: 16px;
+    background: #316099;
+    color: #fff;
+    width: 428px;
+    height: 72px;
+    border: 1px solid #356EAD;
+    opacity: 0.4;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 10px;
+    padding: 21px 0 21px 42px; }
 
 .footer {
   color: #fff;
