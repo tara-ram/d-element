@@ -91,18 +91,27 @@
 
                 <!--форма для связи-->
                 <div class="hidden">
-                    <form>
-                        <div class="form-wrap" id="form">
+                    <form action="" enctype="multipart/form-data" id="form">
+                        <div class="form-wrap" >
                             <h3>SEND US MESSAGE</h3>
-                            <label>Full Name</label><br>
-                            <input type="text" name="firstname" required placeholder="Your Name"><br>
-                            <label>Email</label><br>
-                            <input type="email" name="email" required placeholder="Your Email"><br>
-                            <label>Message</label><br>
-                            <input type="textarea" name="message" rows="10" col="25"  placeholder="Your Message"><br>
+                            <div class="form-item">
+                                <label>Full Name</label><br>
+                                <input type="text" name="firstname" required placeholder="Your Name"/>
+                            </div>
+                            <div class="form-item">
+                                <label>Email</label><br>
+                                <input type="email" name="email" required placeholder="Your Email"/>
+                                 <span class="form__error">Это поле должно содержать E-Mail в формате example@site.com</span><br>
+                            </div>
+                            <div class="form-item">
+                                <label>Message</label><br>
+                                <input type="textarea" name="message" rows="3"  placeholder="Your Message"><br>
+                            </div>
                             <button type="submit" id="form-btn">SUBMIT</button>
+                            <p class="popup">Данные успешно отправлены</p>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -139,7 +148,6 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/common.js"></script>
-   
 
 </body>
 </html>
