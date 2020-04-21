@@ -2,17 +2,21 @@ $(document).ready(function () {
     $('#team-btn').on('click', function () {
         $('.hidden').show();
     });
-    $('#form').submit(function (e) {
+
+    $('#form').on('submit',(function (e) {
         e.preventDefault();
+
         $.ajax({
-            url:'',
+            url: 'text.json',
             method: 'POST',
-            data: $('form').serialize(),
+            data:$('#form').serialize(),
             success: function () {
                 $('.popup').show();
-            }
+            },
+            error: function () {
+                alert('Ошибка. попробуйте позже');
 
+            },
         });
-        
-    });
+    }));
 });
