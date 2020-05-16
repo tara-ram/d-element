@@ -7,7 +7,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         $.ajax({
-            url: 'text.json',
+            url: '/text.json',
             method: 'POST',
             data:$('#form').serialize(),
             success: function () {
